@@ -1,0 +1,80 @@
+@import 'layout';
+
+// Variables
+//
+// Add global variables here, color palette, those variables shared by components all applied to global styling
+
+// ====================================================================
+// Breakpoints
+//
+// Window breakpoints
+// ====================================================================
+$layout-mobile: map-get($layout, mobile) + px;
+$layout-tablet: map-get($layout, tablet) + px;
+$layout-desktopSm: map-get($layout, desktopSm) + px;
+$layout-desktopMd: map-get($layout, desktopMd) + px;
+$layout-desktopLg: map-get($layout, desktopLg) + px;
+
+// ====================================================================
+// Tint/Shade Percentages
+//
+// Percentages to use in the shade/tint functions
+// ====================================================================
+
+// Tint/Shade Percentages
+$tint-percent-1: 30;
+$tint-percent-2: 70;
+$tint-percent-3: 90;
+$shade-percent-1: 30;
+$shade-percent-2: 50;
+$shade-percent-3: 80;
+
+// ====================================================================
+// Transition timings
+//
+// Transition timings to use for transitions.
+// ====================================================================
+
+$default-transition-medium: 0.5s;
+$default-transition-short: 0.33s;
+$default-transition-tiny: 0.2s;
+
+// ====================================================================
+// Base palette
+//
+// Grayscale and brand colors for use across the site.
+// ====================================================================
+
+$white: #fff;
+$black: #262626;
+$grey: #595959;
+
+// ====================================================================
+// General
+//
+// Global color variables, used usually in sections
+// Global variables used across the web app
+// ====================================================================
+$page-bg-color: $white;
+$element-shadow: 0 16px 16px 10px rgba(0, 0, 0, 0.04);
+$element-shadow-center: 0 0 16px 0 rgba(0, 0, 0, 0.04);
+$element-shadow-center-blue: 0 0 16px 0 rgba(39, 113, 234, 0.1);
+$generic-fonts: 'Poppins', Helvetica, Arial, sans-serif;
+$roboto-font: 'RobotoMono', Helvetica, Arial, sans-serif;
+$default-border-radius: 8px;
+
+// ====================================================================
+// Nav bar
+// ====================================================================
+$navbar-height-mobile: 8rem;
+$navbar-height-desktop: 9.6rem;
+
+// ====================================================================
+// List of z-index element
+// ====================================================================
+$elements: pages, elements, nav, banner, modal;
+
+// ====================================================================
+// Max Widths to use for pages
+// ====================================================================
+$default-page-max-width: px(1200);

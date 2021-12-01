@@ -1,0 +1,12 @@
+@import 'shared';
+
+.{{name}} {
+
+  // TABLET
+  @include breakpoint(tablet) {
+  }
+
+  // DESKTOP
+  @include breakpoint(desktopSm) {
+  }
+}

@@ -1,0 +1,42 @@
+@import 'shared';
+
+.Layout {
+  display: block;
+  padding-top: $navbar-height-mobile;
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+
+  // USER ACTIVE STATE
+  &.userActive {
+    @include breakpoint(desktopSm) {
+      padding-top: unset;
+      margin-left: $sidenav-width-desktop;
+    }
+  }
+
+  .entering {
+    opacity: 0;
+    transform: translateY(px(20));
+  }
+
+  .entered {
+    transition: opacity $default-transition-tiny ease-in-out, transform $default-transition-tiny ease-in-out;
+    opacity: 1;
+    transform: none;
+  }
+
+  .exiting {
+    position: absolute;
+    opacity: 0;
+  }
+
+  @include breakpoint(desktopSm) {
+    padding-top: $navbar-height-desktop;
+    transition: margin-top $default-transition-short;
+
+    &.offsetTop {
+      @include banner-offset-top();
+    }
+  }
+}

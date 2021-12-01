@@ -1,0 +1,100 @@
+@import 'shared';
+
+.ContactForm {
+  background-color: tint($blue, $tint-percent-3);
+  border-radius: px(8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: px(375);
+  min-height: px(398);
+
+  .spinnerTest {
+    position: absolute;
+    top: auto;
+    bottom: auto;
+    left: auto;
+    right: auto;
+  }
+
+  .errorMessage {
+    @include font-style(paragraph-xs);
+    color: $grey;
+    text-align: center;
+    margin: 0 px(50) px(20);
+  }
+
+  .inputGroup {
+    display: flex;
+    flex-direction: column;
+    margin: px(10) 0;
+
+    .inputLabel {
+      margin-bottom: px(16);
+
+      .inputField {
+        @include font-style(paragraph-xs);
+        width: px(327);
+
+        &.emailInputField {
+          height: px(48);
+        }
+
+        &.messageInputField {
+          padding-bottom: px(60);
+        }
+      }
+    }
+  }
+
+  .submitButton {
+    width: 100%;
+    margin-bottom: px(33);
+  }
+
+  .captcha {
+    margin-bottom: px(33);
+  }
+
+  .successContainer {
+    text-align: center;
+    margin: px(30) px(60) px(60);
+
+    .successTitle {
+      @include font-style(paragraph-l);
+      color: $blue;
+      margin-bottom: px(14);
+    }
+
+    .succesMessage {
+      @include font-style(paragraph-xs);
+      color: $grey;
+    }
+  }
+
+  @include breakpoint(desktopMd) {
+    min-width: px(561);
+    min-height: px(382);
+    margin-bottom: px(107);
+
+    .inputGroup {
+      .inputLabel {
+        .inputField {
+          margin: 0 px(24);
+          width: px(512);
+        }
+      }
+    }
+
+    .submitButton {
+      margin: 0 px(24);
+      width: px(404);
+      margin-bottom: px(17);
+    }
+
+    .captcha {
+      margin-left: px(24);
+    }
+  }
+}

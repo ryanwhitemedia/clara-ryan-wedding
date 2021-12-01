@@ -1,0 +1,125 @@
+@import 'shared';
+
+.Header {
+  @include z-index(nav);
+  position: fixed;
+  top: 0;
+  overflow: visible;
+
+  .topBar {
+    align-items: center;
+    background-color: $secondary-blue;
+    box-shadow: $element-shadow;
+    display: flex;
+    height: $navbar-height-mobile;
+    justify-content: center;
+    padding: px(25) $default-padding-mobile;
+    position: fixed;
+    width: 100%;
+  }
+
+  .logoWrapper {
+    cursor: pointer;
+  }
+
+  .logo {
+    max-width: 100%;
+    width: px(150);
+  }
+
+  .hamburgerButton {
+    @include z-index(navelements);
+    @include box(px(40));
+    background-color: transparent;
+    border: none;
+    display: block;
+    margin-left: auto;
+    padding: px(4);
+    position: fixed;
+    top: px(20);
+    right: px(25);
+
+    .bar {
+      background-color: $black;
+      height: px(2);
+      margin: auto 0;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: px(8);
+
+      // Hamburger Icon
+      &:first-child {
+        transform: translateY(px(-7)) scaleX(1);
+        width: px(24);
+      }
+
+      &:nth-child(2) {
+        transform: scaleX(1);
+        width: px(12);
+      }
+
+      &:nth-child(3) {
+        transform: translateY(px(7)) scaleX(1);
+        width: px(19);
+      }
+
+      &:first-child,
+      &:nth-child(2),
+      &:nth-child(3) {
+        transform-origin: left;
+        transition: transform $default-transition-short 0.45s;
+      }
+
+      // Close X Icon
+      &:nth-child(4) {
+        transform: rotate(45deg) scaleX(0);
+        transition: transform $default-transition-short;
+        width: px(24);
+      }
+
+      &:nth-child(5) {
+        transform: rotate(-45deg) scaleX(0);
+        transition: transform $default-transition-short 0.15s;
+        width: px(24);
+      }
+    }
+  }
+
+  &.navOpen {
+    .bar {
+      // Hamburger Icon
+      &:first-child,
+      &:nth-child(2),
+      &:nth-child(3) {
+        transform: scaleX(0);
+        transition: transform $default-transition-short;
+      }
+
+      // Close X Icon
+      &:nth-child(4) {
+        transform: rotate(45deg) scaleX(1);
+        transition: transform $default-transition-short $default-transition-short;
+        width: px(24);
+      }
+
+      &:nth-child(5) {
+        transform: rotate(-45deg) scaleX(1);
+        transition: transform $default-transition-short 0.45s;
+        width: px(24);
+      }
+    }
+  }
+
+  // Tablet
+  @include breakpoint(tablet) {
+  }
+
+  // Desktop
+  @include breakpoint(desktopSm) {
+    .topBar,
+    .hamburgerButton {
+      display: none;
+    }
+  }
+}

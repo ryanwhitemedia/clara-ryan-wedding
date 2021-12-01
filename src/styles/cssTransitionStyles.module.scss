@@ -1,0 +1,42 @@
+@import 'shared';
+
+.item {
+  width: 100%;
+  pointer-events: none;
+
+  &.show {
+    pointer-events: all;
+  }
+}
+
+.itemEnter,
+.item {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.itemEnterDone,
+.show {
+  opacity: 1;
+  transition: opacity $default-transition-short $default-transition-short;
+  position: static;
+}
+
+.itemExit {
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.itemExitDone {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity $default-transition-short;
+  pointer-events: none;
+}

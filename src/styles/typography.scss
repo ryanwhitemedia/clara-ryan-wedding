@@ -1,0 +1,55 @@
+// prettier-ignore
+$typography-system: (
+  mobile: (
+    heading-l: (64, 72),
+    heading-m: (48, 56),
+    heading-s: (32, 40),
+    paragraph-l: (24, 32),
+    paragraph-m: (18, 28),
+    paragraph-s: (16, 28),
+  ),
+  tablet: (
+  ),
+  desktopSm: (
+  ),
+  desktopMd: (
+  ),
+  desktopLg: (
+  )
+);
+
+@mixin font-style($element) {
+  $mobile: map-get($typography-system, mobile);
+  $tablet: map-get($typography-system, tablet);
+  $desktopSm: map-get($typography-system, desktopSm);
+  $desktopMd: map-get($typography-system, desktopMd);
+  $desktopLg: map-get($typography-system, desktopLg);
+
+  @if (map-has-key($mobile, $element)) {
+    @include font-size(map-get($mobile, $element) ...);
+  }
+
+  @if (map-has-key($tablet, $element)) {
+    @include breakpoint(tablet) {
+      @include font-size(map-get($tablet, $element) ...);
+    }
+  }
+
+  @if (map-has-key($desktopSm, $element)) {
+    @include breakpoint(desktopSm) {
+      @include font-size(map-get($desktopSm, $element) ...);
+    }
+  }
+
+  @if (map-has-key($desktopMd, $element)) {
+    @include breakpoint(desktopMd) {
+      @include font-size(map-get($desktopMd, $element) ...);
+    }
+  }
+
+  @if (map-has-key($desktopLg, $element)) {
+    @include breakpoint(desktopLg) {
+      @include font-size(map-get($desktopLg, $element) ...);
+    }
+  }
+}
