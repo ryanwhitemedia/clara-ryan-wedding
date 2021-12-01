@@ -8,7 +8,7 @@ import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 
 import styles from './Layout.module.scss';
-import transitionStyles from '../../styles/transition-styles.scss';
+import transitionStyles from '../../styles/transition-styles.module.scss';
 
 const getTransitionStyles = {
   entering: transitionStyles.entering,

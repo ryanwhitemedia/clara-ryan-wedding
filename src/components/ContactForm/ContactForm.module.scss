@@ -1,7 +1,7 @@
 @import 'shared';
 
 .ContactForm {
-  background-color: tint($blue, $tint-percent-3);
+  background-color: tint($brand-primary, $tint-percent-3);
   border-radius: px(8);
   display: flex;
   flex-direction: column;
@@ -63,38 +63,13 @@
 
     .successTitle {
       @include font-style(paragraph-l);
-      color: $blue;
+      color: $brand-primary;
       margin-bottom: px(14);
     }
 
     .succesMessage {
       @include font-style(paragraph-xs);
       color: $grey;
-    }
-  }
-
-  @include breakpoint(desktopMd) {
-    min-width: px(561);
-    min-height: px(382);
-    margin-bottom: px(107);
-
-    .inputGroup {
-      .inputLabel {
-        .inputField {
-          margin: 0 px(24);
-          width: px(512);
-        }
-      }
-    }
-
-    .submitButton {
-      margin: 0 px(24);
-      width: px(404);
-      margin-bottom: px(17);
-    }
-
-    .captcha {
-      margin-left: px(24);
     }
   }
 }
