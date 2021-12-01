@@ -1,14 +1,10 @@
 export default {
-  Landing: {
+  Home: {
     path: '/',
     title: 'Home'
   },
   About: {
     path: '/about/',
     title: 'About'
-  },
-  Onboarding: {
-    path: '/onboarding/',
-    title: 'Onboarding'
   }
 };

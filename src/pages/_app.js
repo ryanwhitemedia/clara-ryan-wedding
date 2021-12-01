@@ -3,18 +3,11 @@ import dynamic from 'next/dynamic';
 import 'normalize.css';
 import 'default-passive-events';
 import 'focus-visible';
-import { UserProvider } from '@auth0/nextjs-auth0';
-import Router from 'next/router';
 
-import { pageview } from '../lib/analytics/ga.js';
-
-import '../styles/global-charts.scss';
-import '../styles/global-qmod.scss';
 import '../styles/global.scss';
 import '../styles/nprogress.scss';
 
 import Layout from '../components/Layout/Layout';
-import ProviderWrapper from '../components/ProviderWrapper/ProviderWrapper';
 
 import detect from '../utils/detect';
 
@@ -40,18 +33,6 @@ function App({ Component, pageProps }) {
     }
   }, []);
 
-  /* GOOGLE ANALYTICS SUBSCRIPTION */
-  useEffect(() => {
-    const handleRouteChange = (url) => {
-      pageview(url);
-    };
-    Router.events.on('routeChangeComplete', handleRouteChange);
-
-    return () => {
-      Router.events.off('routeChangeComplete', handleRouteChange);
-    };
-  }, []);
-
   const TopProgressBar = dynamic(
     () => {
       return import('../components/TopProgressBar/TopProgressBar');
@@ -69,14 +50,10 @@ function App({ Component, pageProps }) {
 
   return (
     <>
-      <UserProvider>
-        <ProviderWrapper>
-          <Layout>
-            <TopProgressBar />
-            <Component {...pageProps} />
-          </Layout>
-        </ProviderWrapper>
-      </UserProvider>
+      <Layout>
+        <TopProgressBar />
+        <Component {...pageProps} />
+      </Layout>
     </>
   );
 }

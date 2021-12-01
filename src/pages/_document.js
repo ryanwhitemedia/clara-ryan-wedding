@@ -18,12 +18,6 @@ class MyDocument extends Document {
                 : process.env.NEXT_PUBLIC__RECAPTCHA_PROD
             }`}
           ></script>
-
-          {/* Rewardful */}
-          {/* <script src="../lib/rewardful.js"></script>
-          <script async src="https://r.wdfl.co/rw.js" data-rewardful="c48474"></script> */}
-
-          {/* Global Site Tag (gtag.js) - Google Analytics */}
           <script
             async
             src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
@@ -38,28 +32,15 @@ class MyDocument extends Document {
             gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
               page_path: window.location.pathname,
             });
-            // Google Ads Config
-            gtag('config', 'AW-778223603');
             `
             }}
           />
-
-          {/* ConvertKit */}
-          <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
         </Head>
 
         <body>
           <Main />
           <NextScript />
         </body>
-        {/* QUOTE MEDIA */}
-        <script
-          id="qmod"
-          type="application/javascript"
-          src="https://qmod.quotemedia.com/js/qmodLoader.js"
-          data-qmod-wmid={process.env.QMOD_WMID}
-        />
-        <script id="qmodiiLoader" src="https://qmod.quotemedia.com/static/qmodii/loader.js"></script>
       </Html>
     );
   }
