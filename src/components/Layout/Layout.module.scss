@@ -1,11 +1,14 @@
 @import 'shared';
 
 .Layout {
-  padding-top: $navbar-height-mobile;
   display: block;
   min-height: 100vh;
   overflow: hidden;
   position: relative;
+  max-width: $default-page-max-width;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: $navbar-height-mobile;
 
   @include breakpoint(desktopSm) {
     padding-top: $navbar-height-desktop;

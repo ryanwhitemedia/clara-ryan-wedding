@@ -8,10 +8,10 @@ import routes from '../../data/routes';
 function Header() {
   return (
     <header className={classnames(styles.Header)}>
-      <nav>
-        <ul>
+      <nav className={classnames(styles.nav)}>
+        <ul className={classnames(styles.menu)}>
           {Object.values(routes).map(({ path, title }) => (
-            <li key={path}>
+            <li key={path} className={classnames(styles.menuItem)}>
               <Link href={path}>
                 <a aria-label={path} href={path}>
                   {title}
