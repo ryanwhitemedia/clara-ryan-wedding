@@ -47,7 +47,7 @@ function Head({ title, description, keywords, og_title, og_description, og_image
       <meta name="twitter:image" content={og_image} />
       <meta name="twitter:title" content={ogTitle} />
       <meta name="twitter:description" content={ogDescription} />
-      <meta name="twitter:site:id" content="@getstratosphere" />
+      <meta name="twitter:site:id" content="@TWITTER_HERE" />
       <meta property="fb:app_id" content="FB_APP_ID" />
       <meta name="google-site-verification" content="[Google Web Master Tools]" />
       <meta name="msvalidate.01" content="[Bing Web Master Tools]" />
@@ -68,10 +68,9 @@ Head.propTypes = checkProps({
 });
 
 Head.defaultProps = {
-  description:
-    'Stratosphere is the investment research platform that combines software tools, analytics and premium in-house research in one place.',
+  description: 'Default Description.',
   og_image: `${process.env.NEXT_PUBLIC_WEBSITE_SITE_URL}assets/images/share-image.png`,
-  keywords: ['Investing', 'Stratosphere', 'Candian Investor']
+  keywords: ['']
 };
 
 export default memo(Head);

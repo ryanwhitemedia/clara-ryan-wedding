@@ -12,7 +12,6 @@
   },
   "scripts": {
     "dev": "cross-env BUILD_ENV=development next dev",
-    "dev-proxy": "cross-env BUILD_ENV=development next dev -H stratosphere2.local",
     "start": "next start",
     "\n ######################  NPM Secondary Pipeline  ######################": "",
     "build": "next build",
