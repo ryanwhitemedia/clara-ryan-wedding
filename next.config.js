@@ -44,35 +44,20 @@ const nextJSConfig = {
     autoPrerender: false
   },
   sassOptions: {
-    includePaths: ['src/styles']
-  },
-  experimental: {
-    modern: true
+    includePaths: [path.join(__dirname, 'src/styles')]
   },
   images: {
     domains: ['a.storyblok.com']
   },
-  webpack: function (config, options) {
-    const moduleSassRule = config.module.rules[1].oneOf.find(
-      (rule) => rule.test.toString() === /\.module\.(scss|sass)$/.toString()
-    );
-
-    if (moduleSassRule) {
-      const cssLoader = moduleSassRule.use.find(({ loader }) => loader.includes('css-loader'));
-      if (cssLoader) cssLoader.options.modules.mode = 'local';
-    }
-
-    if (options.dev) {
-      config.module.rules.push({
-        test: /.\/src\/.*\/.*.js$/,
-        enforce: 'pre',
-        use: [
-          {
-            loader: 'eslint-loader'
-          }
-        ]
-      });
-    }
+  webpack: function (config, _options) {
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: [
+        {
+          loader: '@svgr/webpack'
+        }
+      ]
+    });
 
     return config;
   }
