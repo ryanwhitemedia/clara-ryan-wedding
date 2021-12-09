@@ -6,8 +6,6 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import fetchJson from '../../lib/fetchJson';
 import styles from './ContactForm.module.scss';
 
-import LoaderSpinner from '../LoaderSpinner/LoaderSpinner';
-
 import { ContactSchema } from '../../schemas/ContactSchema';
 import Button from '../Button/Button';
 
@@ -66,7 +64,7 @@ function ContactForm({ className }) {
       {submitted === false ? (
         isSubmitting ? (
           <div className={classnames(styles.spinnerTest)}>
-            <LoaderSpinner />
+            <p>Loading...</p>
           </div>
         ) : (
           <>
