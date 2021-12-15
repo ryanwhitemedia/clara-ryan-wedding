@@ -11,13 +11,14 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
+          {/* eslint-disable-next-line @next/next/no-sync-scripts */}
           <script
             src={`https://www.google.com/recaptcha/api.js?render=${
               process.env.NODE_ENV !== 'production'
                 ? process.env.NEXT_PUBLIC_RECAPTCHA_LOCAL
                 : process.env.NEXT_PUBLIC__RECAPTCHA_PROD
             }`}
-          ></script>
+          />
           <script
             async
             src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}

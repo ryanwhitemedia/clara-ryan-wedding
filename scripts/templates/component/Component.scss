@@ -2,11 +2,11 @@
 
 .{{name}} {
 
-  // TABLET
+  /* TABLET */
   @include breakpoint(tablet) {
   }
 
-  // DESKTOP
+  /* DESKTOP */
   @include breakpoint(desktopSm) {
   }
 }

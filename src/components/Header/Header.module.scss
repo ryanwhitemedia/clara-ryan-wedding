@@ -22,11 +22,11 @@
     }
   }
 
-  // Tablet
+  /* Tablet */
   @include breakpoint(tablet) {
   }
 
-  // Desktop
+  /* Desktop */
   @include breakpoint(desktopSm) {
     height: $navbar-height-desktop;
   }

@@ -1,17 +1,25 @@
-// Custom and Static CSS Easing
-// More information about eases in:
-// https://matthewlein.com/tools/ceaser
+/* prettier-ignore */
 
-// Custom Easing Mixin
-// Example:
-// @include customEase(0.25, 0.25, 0.75, 0.75);
+/*
+* Custom and Static CSS Easing
+* More information about eases in:
+* https: /*matthewlein.com/tools/ceaser
+*/
+
+/*
+* Custom Easing Mixin
+* Example:
+* @include customEase(0.25, 0.25, 0.75, 0.75);
+*/
 @mixin customEase($timing...) {
   transition-timing-function: cubic-bezier($timing);
 }
 
-// Standard Eases Mixin
-// Example:
-// @include ease(in-out-quad);
+/*
+* Standard Eases Mixin
+* Example:
+* @include ease(in-out-quad);
+*/
 @mixin ease($easeType) {
   $easeMap: (
     linear: cubic-bezier(0.25, 0.25, 0.75, 0.75),

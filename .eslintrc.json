@@ -1,14 +1,26 @@
 {
-  "extends": ["react-app", "react-jam3", "plugin:jsx-a11y/recommended"],
-  "plugins": ["jam3", "jsx-a11y"],
+  "extends": [
+    "react-app",
+    "react-jam3",
+    "next/core-web-vitals",
+    "plugin:@next/next/recommended",
+    "plugin:import/typescript",
+    "prettier"
+  ],
+  "plugins": ["jam3"],
   "settings": {
     "react": {
       "version": "detect"
+    },
+    "import/resolver": {
+      "alias": {
+        "map": [["@", "./src"]]
+      }
     }
   },
   "rules": {
     "prettier/prettier": "warn",
-    "react/react-in-jsx-scope": "off",
+    "import/no-anonymous-default-export": "off",
     "jam3/no-sanitizer-with-danger": [
       2,
       {
@@ -17,6 +29,14 @@
     ],
     "jam3/forbid-methods": 2,
     "no-console": "off",
+    "jsx-a11y/anchor-is-valid": [
+      "error",
+      {
+        "components": ["Link"],
+        "specialLink": ["hrefLeft", "hrefRight"],
+        "aspects": ["invalidHref", "preferButton"]
+      }
+    ],
     "react/sort-comp": [
       1,
       {
@@ -51,26 +71,9 @@
           ]
         }
       }
-    ]
-    // "import/order": [
-    //   "error",
-    //   {
-    //     "groups": ["builtin", "external", "internal"],
-    //     "pathGroups": [
-    //       {
-    //         "pattern": "react",
-    //         "group": "external",
-    //         "position": "before"
-    //       }
-    //     ],
-    //     "pathGroupsExcludedImportTypes": ["react"],
-    //     "newlines-between": "always",
-    //     "alphabetize": {
-    //       "order": "asc",
-    //       "caseInsensitive": true
-    //     }
-    //   }
-    // ]
+    ],
+    "@next/next/no-img-element": "off",
+    "@typescript-eslint/no-explicit-any": ["error"]
   },
   "overrides": [
     {

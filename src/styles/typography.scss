@@ -1,4 +1,4 @@
-// prettier-ignore
+/* prettier-ignore */
 $typography-system: (
   mobile: (
     heading-l: (64, 72),
@@ -26,30 +26,30 @@ $typography-system: (
   $desktopLg: map-get($typography-system, desktopLg);
 
   @if (map-has-key($mobile, $element)) {
-    @include font-size(map-get($mobile, $element) ...);
+    @include font-size(map-get($mobile, $element)...);
   }
 
   @if (map-has-key($tablet, $element)) {
     @include breakpoint(tablet) {
-      @include font-size(map-get($tablet, $element) ...);
+      @include font-size(map-get($tablet, $element)...);
     }
   }
 
   @if (map-has-key($desktopSm, $element)) {
     @include breakpoint(desktopSm) {
-      @include font-size(map-get($desktopSm, $element) ...);
+      @include font-size(map-get($desktopSm, $element)...);
     }
   }
 
   @if (map-has-key($desktopMd, $element)) {
     @include breakpoint(desktopMd) {
-      @include font-size(map-get($desktopMd, $element) ...);
+      @include font-size(map-get($desktopMd, $element)...);
     }
   }
 
   @if (map-has-key($desktopLg, $element)) {
     @include breakpoint(desktopLg) {
-      @include font-size(map-get($desktopLg, $element) ...);
+      @include font-size(map-get($desktopLg, $element)...);
     }
   }
 }

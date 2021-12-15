@@ -128,7 +128,9 @@ function ContactForm({ className }) {
       ) : (
         <div className={classnames(styles.successContainer)}>
           <p className={classnames(styles.successTitle)}>Success!</p>
-          <p className={classnames(styles.succesMessage)}>Thanks for reaching out, we'll get back to you shortly.</p>
+          <p className={classnames(styles.succesMessage)}>
+            Thanks for reaching out, we&quot;ll get back to you shortly.
+          </p>
         </div>
       )}
     </div>

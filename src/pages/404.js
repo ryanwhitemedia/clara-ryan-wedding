@@ -10,9 +10,7 @@ export default function Custom404() {
       <h4 className={classnames(styles.subtitle)}>
         It looks like you are lost... To return to the home page{' '}
         <Link href="/">
-          <a href="/" className={classnames(styles.link)}>
-            click here
-          </a>
+          <a className={classnames(styles.link)}>click here</a>
         </Link>
         .
       </h4>
