@@ -5,7 +5,7 @@ import checkProps from '@jam3/react-check-extra-props';
 
 import styles from './Icon.module.scss';
 
-import { Star } from '../../assets/svgs/star.svg';
+import Star from '../../assets/svgs/star.svg';
 
 const icons = {
   star: Star

@@ -28,9 +28,6 @@ const optimizedImagesConfig = {
     interlaced: true,
     optimizationLevel: 3
   },
-  svgo: {
-    // enable/disable svgo plugins here
-  },
   webp: {
     preset: 'default',
     quality: 75
@@ -45,9 +42,6 @@ const nextJSConfig = {
   },
   sassOptions: {
     includePaths: [path.join(__dirname, 'src/styles')]
-  },
-  images: {
-    domains: ['a.storyblok.com']
   },
   webpack: function (config, _options) {
     config.module.rules.push({

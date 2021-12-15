@@ -37,7 +37,7 @@ const dir =
     ? path.resolve(__dirname, `../src/${type}s/` + argv._[0].toLowerCase())
     : path.resolve(__dirname, [`../src/components/`, targetFolder, name].join(''));
 
-fs.stat(dir, (err, stat) => {
+fs.stat(dir, (err, _stat) => {
   if (err) {
     write();
   } else {
@@ -57,10 +57,6 @@ function write() {
           ]
         : [
             template(path.resolve(__dirname, 'templates/' + type + '/Component.js'), path.resolve(dir, `${name}.js`)),
-            template(
-              path.resolve(__dirname, 'templates/' + type + '/Component.stories.js'),
-              path.resolve(dir, `${name}.stories.js`)
-            ),
             template(
               path.resolve(__dirname, 'templates/' + type + '/Component.scss'),
               path.resolve(dir, `${name}.module.scss`)

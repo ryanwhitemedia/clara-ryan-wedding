@@ -1,7 +1,6 @@
-import detect from './detect';
-import deviceMatrix from './device-matrix.json';
+import { os, browser } from '@jam3/detect';
 
-const { browser, os, bots } = detect;
+import deviceMatrix from './device-matrix.json';
 
 /**
  * Returns if the current browser is supported by the web app
@@ -10,12 +9,12 @@ const { browser, os, bots } = detect;
  * @returns {Boolean} supported
  */
 function isSupported() {
-  const userBrowser = browser.getName().toLowerCase();
-  const userBrowserVersion = parseFloat(browser.getVersion());
-  const userOS = os ? os.getName().toLowerCase() : 'unknown';
-  const userOSVersion = os.getVersion() === 'Unknown' ? Number.MAX_SAFE_INTEGER : parseFloat(os.getVersion());
+  const userBrowser = browser.name;
+  const userBrowserVersion = browser.version;
+  const userOS = os ? os.name : 'unknown';
+  const userOSVersion = os.version === 'Unknown' ? Number.MAX_SAFE_INTEGER : parseFloat(os.version);
 
-  if (bots.isBot()) {
+  if (os.bot) {
     return true;
   }
 

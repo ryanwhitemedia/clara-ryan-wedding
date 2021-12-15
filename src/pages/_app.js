@@ -3,18 +3,16 @@ import dynamic from 'next/dynamic';
 import 'normalize.css';
 import 'default-passive-events';
 import 'focus-visible';
+import { device, browser } from '@jam3/detect';
 
 import '../styles/global.scss';
 import '../styles/nprogress.scss';
 
 import Layout from '../components/Layout/Layout';
 
-import detect from '../utils/detect';
-
 // This default export is required in a new `pages/_app.js` file.
 function App({ Component, pageProps }) {
   const [isSupported, setIsSupported] = useState(true);
-
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const unsupportedUtil = require('../utils/unsupported-utils');
@@ -22,8 +20,8 @@ function App({ Component, pageProps }) {
         if (process.env.NODE_ENV !== 'production' && window.location.href.indexOf('?nostat') === -1) {
           require('@jam3/stats')();
         }
-        const { device, browser } = detect;
-        const classes = [device.isMobile ? 'mobile' : '', device.getType(), browser.getName()].filter((className) =>
+
+        const classes = [device.mobile ? 'mobile' : '', device.type, browser.name].filter((className) =>
           Boolean(className)
         );
         document.body.className = [...document.body.className.split(' '), ...classes].filter(Boolean).join(' ');
