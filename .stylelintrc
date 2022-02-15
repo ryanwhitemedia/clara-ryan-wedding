@@ -1,8 +1,6 @@
 {
   "severity": "warning",
   "plugins": ["stylelint-performance-animation"],
-  "extends": "stylelint-config-jam3",
-
   "rules": {
     "block-no-empty": null,
     "declaration-bang-space-before": null,
