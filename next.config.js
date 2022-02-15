@@ -1,14 +1,9 @@
 const path = require('path');
 
-require('dotenv').config({
-  path: path.resolve(process.cwd(), `.env.${process.env.CI_ENV || process.env.NODE_ENV}`)
-});
-
+const withPWA = require('next-pwa');
+const runtimeCaching = require('next-pwa/cache');
 const withPlugins = require('next-compose-plugins');
 const optimizedImages = require('next-optimized-images');
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: process.env.BUNDLE_ANALYZE === 'true'
-});
 
 const optimizedImagesConfig = {
   inlineImageLimit: 1,
@@ -36,9 +31,12 @@ const optimizedImagesConfig = {
 
 const nextJSConfig = {
   trailingSlash: true,
-  compress: true, // NOTE: enable this when doing SSR
+  compress: false, // NOTE: enable this when doing SSR
   devIndicators: {
     autoPrerender: false
+  },
+  images: {
+    disableStaticImages: true
   },
   sassOptions: {
     includePaths: [path.join(__dirname, 'src/styles')]
@@ -57,4 +55,24 @@ const nextJSConfig = {
   }
 };
 
-module.exports = withPlugins([[optimizedImages, optimizedImagesConfig], [withBundleAnalyzer]], nextJSConfig);
+const nextPlugins = [[optimizedImages, optimizedImagesConfig]];
+if (process.env.BUNDLE_ANALYZE === 'true') {
+  const withBundleAnalyzer = require('@next/bundle-analyzer')({
+    enabled: true
+  });
+  nextPlugins.push(withBundleAnalyzer);
+}
+
+if (process.env.ENABLE_PWA === 'true') {
+  nextPlugins.push([
+    withPWA,
+    {
+      pwa: {
+        dest: 'public',
+        runtimeCaching
+      }
+    }
+  ]);
+}
+
+module.exports = withPlugins(nextPlugins, nextJSConfig);
