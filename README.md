@@ -1,1 +1,1 @@
-# NextJS Starter
+# Tonic Creative NextJS Starter
