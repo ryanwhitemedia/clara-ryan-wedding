@@ -31,12 +31,6 @@ function App({ Component, pageProps }) {
     }
   }, []);
 
-  const TopProgressBar = dynamic(
-    () => {
-      return import('../components/TopProgressBar/TopProgressBar');
-    },
-    { ssr: false }
-  );
 
   if (!isSupported) {
     const Unsupported = dynamic(() =>
@@ -49,7 +43,6 @@ function App({ Component, pageProps }) {
   return (
     <>
       <Layout>
-        <TopProgressBar />
         <Component {...pageProps} />
       </Layout>
     </>

@@ -1,7 +1,5 @@
-import checkProps from '@jam3/react-check-extra-props';
 import classnames from 'classnames';
 import { useRouter } from 'next/router';
-import PropTypes from 'prop-types';
 import { TransitionGroup, Transition as ReactTransition } from 'react-transition-group';
 
 import Footer from '../Footer/Footer';
@@ -33,10 +31,6 @@ function Layout({ children }) {
     </>
   );
 }
-
-Layout.propTypes = checkProps({
-  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]).isRequired
-});
 
 Layout.defaultProps = {};
 

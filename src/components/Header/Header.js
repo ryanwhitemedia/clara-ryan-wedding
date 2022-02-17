@@ -1,5 +1,4 @@
 import { memo } from 'react';
-import checkProps from '@jam3/react-check-extra-props';
 import classnames from 'classnames';
 import Link from 'next/link';
 import styles from './Header.module.scss';
@@ -24,8 +23,6 @@ function Header() {
     </header>
   );
 }
-
-Header.propTypes = checkProps({});
 
 Header.defaultProps = {};
 

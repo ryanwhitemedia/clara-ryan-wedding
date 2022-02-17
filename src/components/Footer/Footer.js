@@ -1,6 +1,5 @@
 import { memo } from 'react';
 import classnames from 'classnames';
-import checkProps from '@jam3/react-check-extra-props';
 import Link from 'next/link';
 
 import styles from './Footer.module.scss';
@@ -29,8 +28,6 @@ function Footer() {
     </footer>
   );
 }
-
-Footer.propTypes = checkProps({});
 
 Footer.defaultProps = {};
 

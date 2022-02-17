@@ -60,7 +60,6 @@
   "devDependencies": {
     "@commitlint/cli": "^15.0.0",
     "@commitlint/config-conventional": "^15.0.0",
-    "@jam3/react-check-extra-props": "^1.0.1",
     "@jam3/stats": "1.0.1",
     "@ls-lint/ls-lint": "^1.10.0",
     "@next/bundle-analyzer": "12.0.7",
