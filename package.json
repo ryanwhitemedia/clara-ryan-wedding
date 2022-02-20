@@ -36,6 +36,8 @@
     "@jam3/detect": "2.0.5",
     "@jam3/react-hooks": "1.0.0",
     "@reduxjs/toolkit": "^1.6.0",
+    "@storyblok/storyblok-editable": "^1.1.0",
+    "axios": "^0.21.4",
     "classnames": "2.3.1",
     "default-passive-events": "2.0.0",
     "focus-visible": "5.2.0",
@@ -53,6 +55,7 @@
     "react-transition-group": "^4.4.2",
     "react-use": "^17.3.1",
     "redux": "^4.1.2",
+    "storyblok-js-client": "^4.2.1",
     "swr": "^1.1.0",
     "xss": "^1.0.10",
     "yup": "^0.32.11"
