@@ -95,11 +95,10 @@ fieldset {
 
 p,
 li {
-  @include font-style(paragraph-s);
+  @include font-style(paragraph);
 }
 
 input {
-  font-family: $roboto-font;
   border-radius: $default-border-radius;
   border: none;
   padding: px(12) px(16);
@@ -111,7 +110,6 @@ input {
   }
 }
 textarea {
-  font-family: $roboto-font;
   border-radius: $default-border-radius;
   border: none;
   color: $black;

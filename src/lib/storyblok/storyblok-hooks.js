@@ -1,15 +1,8 @@
 import { useEffect, useState } from 'react';
-import StoryblokClient from 'storyblok-js-client';
 
-const Storyblok = new StoryblokClient({
-  accessToken: process.env.STORYBLOK_PREVIEW_KEY,
-  cache: {
-    clear: 'auto',
-    type: 'memory'
-  }
-});
+import Storyblok from './Storyblok';
 
-export function useStoryblok(originalStory, preview) {
+export default function useStoryblok(originalStory, preview) {
   let [story, setStory] = useState(originalStory);
 
   // adds the events for updating the visual editor
@@ -21,6 +14,7 @@ export function useStoryblok(originalStory, preview) {
       const storyblokInstance = new StoryblokBridge();
 
       // reload on Next.js page on save or publish event in the Visual Editor
+      // eslint-disable-next-line no-restricted-globals
       storyblokInstance.on(['change', 'published'], () => location.reload(true));
 
       // live update the story on input events
@@ -74,7 +68,7 @@ export function useStoryblok(originalStory, preview) {
       // first load the bridge, then initialize the event listeners
       addBridge(initEventListeners);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [originalStory, preview, setStory]); // runs the effect only once & defines effect dependencies
 
   useEffect(() => {
@@ -83,5 +77,3 @@ export function useStoryblok(originalStory, preview) {
 
   return story;
 }
-
-export default Storyblok;

@@ -1,7 +1,5 @@
 import React, { memo } from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import checkProps from '@jam3/react-check-extra-props';
 
 import styles from './index.module.scss';
 
@@ -16,10 +14,6 @@ function About({ className }) {
     </main>
   );
 }
-
-About.propTypes = checkProps({
-  className: PropTypes.string
-});
 
 About.defaultProps = {};
 
