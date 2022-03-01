@@ -339,3 +339,16 @@
 @mixin banner-offset-top() {
   margin-top: 55px;
 }
+
+/*
+* Set max width and center
+* @example scss Input
+*   element {
+*     @include max-width-center();
+*   }
+*/
+@mixin max-width-center {
+  max-width: $default-page-max-width;
+  margin-left: auto;
+  margin-right: auto;
+}

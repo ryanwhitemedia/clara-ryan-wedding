@@ -22,10 +22,6 @@
     }
   }
 
-  /* Tablet */
-  @include breakpoint(tablet) {
-  }
-
   /* Desktop */
   @include breakpoint(desktopSm) {
     height: $navbar-height-desktop;

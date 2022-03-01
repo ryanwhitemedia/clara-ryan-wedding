@@ -39,8 +39,8 @@ $shade-percent-3: 80;
 */
 
 $default-transition-medium: 0.5s;
-$default-transition-short: 0.33s;
-$default-transition-tiny: 0.2s;
+$default-transition: 0.33s;
+$default-transition-short: 0.2s;
 
 /*
 ====================================================================
@@ -66,8 +66,7 @@ $page-bg-color: $white;
 $element-shadow: 0 16px 16px 10px rgba(0, 0, 0, 0.04);
 $element-shadow-center: 0 0 16px 0 rgba(0, 0, 0, 0.04);
 $element-shadow-center-blue: 0 0 16px 0 rgba(39, 113, 234, 0.1);
-$generic-fonts: 'Poppins', Helvetica, Arial, sans-serif;
-$roboto-font: 'RobotoMono', Helvetica, Arial, sans-serif;
+$generic-fonts: Helvetica, Arial, sans-serif;
 $default-border-radius: 8px;
 
 /*

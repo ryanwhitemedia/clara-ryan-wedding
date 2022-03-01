@@ -1,0 +1,17 @@
+import { memo } from 'react';
+import classnames from 'classnames';
+import SbEditable from 'storyblok-react';
+
+import styles from './{{name}}.module.scss';
+
+function {{name}}({ className, blok }) {
+  return (
+    <SbEditable content={blok}>
+      <div className={classnames(styles.{{name}}, className)}>
+        {{name}} component
+      </div>
+    </SbEditable>
+  );
+}
+
+export default memo({{name}});

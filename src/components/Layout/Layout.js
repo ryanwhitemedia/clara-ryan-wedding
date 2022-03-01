@@ -1,33 +1,33 @@
 import classnames from 'classnames';
-import { useRouter } from 'next/router';
-import { TransitionGroup, Transition as ReactTransition } from 'react-transition-group';
 
-import Footer from '../Footer/Footer';
-import Header from '../Header/Header';
+import { GtmScript } from '@/utils/analytics';
+import useCookieBanner from '@/utils/hooks/use-cookie-banner';
+
+import CookieBanner from '@/components/CookieBanner/CookieBanner';
+import Footer from '@/components/Footer/Footer';
+import Header from '@/components/Header/Header';
 
 import styles from './Layout.module.scss';
-import transitionStyles from '../../styles/transition-styles.module.scss';
-
-const getTransitionStyles = {
-  entering: transitionStyles.entering,
-  entered: transitionStyles.entered,
-  exiting: transitionStyles.exiting
-};
 
 function Layout({ children }) {
-  const router = useRouter();
+  const { validCookie, cookieConsent, updateCookies, acceptAllCookies, rejectAllCookies } = useCookieBanner();
 
   return (
     <>
+      <GtmScript consent={cookieConsent?.statistics} />
+
       <Header />
-      <span className={classnames(styles.Layout)}>
-        <TransitionGroup style={{ position: 'relative' }}>
-          <ReactTransition key={router.pathname} timeout={{ enter: 333, exit: 0 }}>
-            {(status) => <div className={classnames(getTransitionStyles[status])}>{children}</div>}
-          </ReactTransition>
-        </TransitionGroup>
-      </span>
+      <div className={classnames(styles.Layout)}>{children}</div>
       <Footer />
+
+      {!validCookie && (
+        <CookieBanner
+          cookieConsent={cookieConsent}
+          onAccept={acceptAllCookies}
+          onUpdate={updateCookies}
+          onReject={rejectAllCookies}
+        />
+      )}
     </>
   );
 }
