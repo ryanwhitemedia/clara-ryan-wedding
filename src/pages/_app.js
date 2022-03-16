@@ -31,7 +31,6 @@ function App({ Component, pageProps }) {
     }
   }, []);
 
-
   if (!isSupported) {
     const Unsupported = dynamic(() =>
       import(/* webpackChunkName: "Unsupported" */ '../components/Unsupported/Unsupported')

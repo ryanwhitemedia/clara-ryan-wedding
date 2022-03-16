@@ -1,7 +1,6 @@
 import { memo } from 'react';
 import NextHead from 'next/head';
 import { useRouter } from 'next/router';
-import PropTypes from 'prop-types';
 
 import { siteName, siteSlogan } from '../../data/settings';
 
