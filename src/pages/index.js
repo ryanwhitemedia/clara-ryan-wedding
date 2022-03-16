@@ -3,6 +3,8 @@ import classnames from 'classnames';
 
 import styles from './index.module.scss';
 
+import Header from '@/components/Header/Header';
+
 import { AppContext } from '@/contexts/app-context';
 
 import Head from '../components/Head/Head';
@@ -13,6 +15,7 @@ function Home({ className }) {
   return (
     <main className={classnames(styles.Home, className, styles[homeState])}>
       <Head title="Home" />
+      <Header />
       <h2 className={classnames(styles.intro)}>
         Was founded on the belief that brands can thrive while considering people and the planet. Through design and
         development, we give life to meaningful brands that are sustainable, intentional, and useful.

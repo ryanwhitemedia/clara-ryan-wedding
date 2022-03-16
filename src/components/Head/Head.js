@@ -11,7 +11,7 @@ function Head({ title, description, keywords, og_title, og_description, og_image
 
   const ogUrl = `${process.env.NEXT_PUBLIC_WEBSITE_SITE_URL}${router.asPath.substring(1)}`;
   const fullTitle =
-    title && title !== '' ? `${title} ${TITLE_SEPARATOR} ${siteName}` : `${siteName} ${TITLE_SEPARATOR} ${siteSlogan}`;
+    title && title !== '' && title !== 'Home' ? `${title} ${TITLE_SEPARATOR} ${siteName}` : `${siteName}`;
   const ogTitle = og_title ?? fullTitle;
   const ogDescription = og_description ?? description;
 
@@ -56,8 +56,7 @@ function Head({ title, description, keywords, og_title, og_description, og_image
 }
 
 Head.defaultProps = {
-  description:
-    'Through design and development, we give life to meaningful brands that are sustainable, intentional, and useful.',
+  description: siteSlogan,
   og_image: `${process.env.NEXT_PUBLIC_WEBSITE_SITE_URL}assets/images/share-image.png`,
   keywords: ['']
 };
