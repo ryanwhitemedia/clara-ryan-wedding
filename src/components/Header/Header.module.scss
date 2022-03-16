@@ -74,6 +74,7 @@
       bottom: $homepage-padding-mobile;
       left: $homepage-padding-mobile;
       top: unset;
+      // es-lint-disable next-line
       transition: all $default-transition-medium;
       transform-origin: center;
 

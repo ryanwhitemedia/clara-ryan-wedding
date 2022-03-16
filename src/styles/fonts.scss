@@ -19,19 +19,19 @@ $base-path: '../assets/fonts/' !default;
   font-style: normal;
   font-weight: normal;
   font-display: swap;
-  src: url('#{$base-path}Nord/Nord-Light.eot');
-  src: url('#{$base-path}Nord/Nord-Light.eot?#iefix') format('embedded-opentype'),
-    url('#{$base-path}Nord/Nord-Light.ttf') format('truetype'), url('#{$base-path}Nord/Nord-Light.woff') format('woff'),
-    url('#{$base-path}Nord/Nord-Light.woff2') format('woff2');
+  src: url('#{$base-path}Nord/NordLight.eot');
+  src: url('#{$base-path}Nord/NordLight.eot?#iefix') format('embedded-opentype'),
+    url('#{$base-path}Nord/NordLight.ttf') format('truetype'), url('#{$base-path}Nord/NordLight.woff') format('woff'),
+    url('#{$base-path}Nord/NordLight.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'Nord';
-  src: url('#{$base-path}Nord/Nord-LightItalic.eot');
-  src: url('#{$base-path}Nord/Nord-LightItalic.eot?#iefix') format('embedded-opentype'),
-    url('#{$base-path}Nord/Nord-LightItalic.ttf') format('truetype'),
-    url('#{$base-path}Nord/Nord-LightItalic.woff') format('woff'),
-    url('#{$base-path}Nord/Nord-LightItalic.woff2') format('woff2');
+  src: url('#{$base-path}Nord/NordLightItalic.eot');
+  src: url('#{$base-path}Nord/NordLightItalic.eot?#iefix') format('embedded-opentype'),
+    url('#{$base-path}Nord/NordLightItalic.ttf') format('truetype'),
+    url('#{$base-path}Nord/NordLightItalic.woff') format('woff'),
+    url('#{$base-path}Nord/NordLightItalic.woff2') format('woff2');
   font-weight: normal;
   font-style: italic;
 }
