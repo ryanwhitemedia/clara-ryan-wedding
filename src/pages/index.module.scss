@@ -1,1 +1,40 @@
 @import 'shared';
+
+.Home {
+  padding: px(16);
+  height: 100vh;
+
+  .intro {
+    @include font-style(landing-hero);
+    transform: translateY(100vh);
+    transition: transform $default-transition-medium;
+    position: fixed;
+    text-align: right;
+    top: 42%;
+    right: $homepage-padding-mobile;
+    left: $homepage-padding-mobile;
+  }
+
+  &.about {
+    .intro {
+      transform: translateY(0);
+      transition: transform $default-transition-long;
+    }
+  }
+
+  @include breakpoint(tablet) {
+    .intro {
+      right: $homepage-padding-tablet;
+      left: $homepage-padding-tablet;
+      top: 47%;
+    }
+  }
+
+  @include breakpoint(desktopSm) {
+    .intro {
+      max-width: 60%;
+      left: auto;
+      top: 68%;
+    }
+  }
+}

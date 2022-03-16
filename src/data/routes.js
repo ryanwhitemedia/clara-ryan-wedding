@@ -1,10 +1,11 @@
 export default {
-  Home: {
-    path: '/',
+  Contact: {
     title: 'Home'
   },
   About: {
-    path: '/about/',
     title: 'About'
+  },
+  Creative: {
+    title: 'Creative'
   }
 };

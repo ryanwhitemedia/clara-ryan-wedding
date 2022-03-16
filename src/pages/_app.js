@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
+import { browser, device } from '@jam3/detect';
 import 'normalize.css';
 import 'default-passive-events';
 import 'focus-visible';
-import { device, browser } from '@jam3/detect';
 
 import '../styles/global.scss';
 import '../styles/nprogress.scss';
+
+import AppContextProvider from '@/providers/AppContextProvider';
 
 import Layout from '../components/Layout/Layout';
 
@@ -41,9 +43,11 @@ function App({ Component, pageProps }) {
 
   return (
     <>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <AppContextProvider>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </AppContextProvider>
     </>
   );
 }

@@ -14,25 +14,24 @@
 
 $base-path: '../assets/fonts/' !default;
 
-// @font-face {
-//   font-family: 'RobotoMono';
-//   font-style: normal;
-//   font-weight: normal;
-//   font-display: swap;
-//   src: url('#{$base-path}RobotoMono/RobotoMonoRegular.eot');
-//   src: url('#{$base-path}RobotoMono/RobotoMonoRegular.eot?#iefix') format('embedded-opentype'),
-//     url('#{$base-path}RobotoMono/RobotoMonoRegular.ttf') format('truetype'),
-//     url('#{$base-path}RobotoMono/RobotoMonoRegular.woff') format('woff'),
-//     url('#{$base-path}RobotoMono/RobotoMonoRegular.woff2') format('woff2');
-// }
+@font-face {
+  font-family: 'Nord';
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: url('#{$base-path}Nord/Nord-Light.eot');
+  src: url('#{$base-path}Nord/Nord-Light.eot?#iefix') format('embedded-opentype'),
+    url('#{$base-path}Nord/Nord-Light.ttf') format('truetype'), url('#{$base-path}Nord/Nord-Light.woff') format('woff'),
+    url('#{$base-path}Nord/Nord-Light.woff2') format('woff2');
+}
 
-// @font-face {
-//   font-family: 'Poppins';
-//   src: url('#{$base-path}Poppins/PoppinsMedium.eot');
-//   src: url('#{$base-path}Poppins/PoppinsMedium.eot?#iefix') format('embedded-opentype'),
-//     url('#{$base-path}Poppins/PoppinsMedium.ttf') format('truetype'),
-//     url('#{$base-path}Poppins/PoppinsMedium.woff') format('woff'),
-//     url('#{$base-path}Poppins/PoppinsMedium.woff2') format('woff2');
-//   font-weight: 500;
-//   font-style: normal;
-// }
+@font-face {
+  font-family: 'Nord';
+  src: url('#{$base-path}Nord/Nord-LightItalic.eot');
+  src: url('#{$base-path}Nord/Nord-LightItalic.eot?#iefix') format('embedded-opentype'),
+    url('#{$base-path}Nord/Nord-LightItalic.ttf') format('truetype'),
+    url('#{$base-path}Nord/Nord-LightItalic.woff') format('woff'),
+    url('#{$base-path}Nord/Nord-LightItalic.woff2') format('woff2');
+  font-weight: normal;
+  font-style: italic;
+}

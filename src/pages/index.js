@@ -1,15 +1,22 @@
-import { memo } from 'react';
+import { memo, useContext } from 'react';
 import classnames from 'classnames';
 
-import Head from '../components/Head/Head';
 import styles from './index.module.scss';
 
-function Home({ className }) {
-  return (
-    <main className={classnames(styles.Home, className)}>
-      <Head title="Home" />
+import { AppContext } from '@/contexts/app-context';
 
-      <h1>Home Page</h1>
+import Head from '../components/Head/Head';
+
+function Home({ className }) {
+  const { homeState } = useContext(AppContext);
+
+  return (
+    <main className={classnames(styles.Home, className, styles[homeState])}>
+      <Head title="Home" />
+      <h2 className={classnames(styles.intro)}>
+        Was founded on the belief that brands can thrive while considering people and the planet. Through design and
+        development, we give life to meaningful brands that are sustainable, intentional, and useful.
+      </h2>
     </main>
   );
 }

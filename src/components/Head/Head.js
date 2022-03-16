@@ -56,7 +56,8 @@ function Head({ title, description, keywords, og_title, og_description, og_image
 }
 
 Head.defaultProps = {
-  description: 'Default Description.',
+  description:
+    'Through design and development, we give life to meaningful brands that are sustainable, intentional, and useful.',
   og_image: `${process.env.NEXT_PUBLIC_WEBSITE_SITE_URL}assets/images/share-image.png`,
   keywords: ['']
 };

@@ -1,13 +1,12 @@
 import classnames from 'classnames';
 
-import { GtmScript } from '@/utils/analytics';
-import useCookieBanner from '@/utils/hooks/use-cookie-banner';
+import styles from './Layout.module.scss';
 
 import CookieBanner from '@/components/CookieBanner/CookieBanner';
-import Footer from '@/components/Footer/Footer';
 import Header from '@/components/Header/Header';
 
-import styles from './Layout.module.scss';
+import { GtmScript } from '@/utils/analytics';
+import useCookieBanner from '@/utils/hooks/use-cookie-banner';
 
 function Layout({ children }) {
   const { validCookie, cookieConsent, updateCookies, acceptAllCookies, rejectAllCookies } = useCookieBanner();
@@ -18,7 +17,6 @@ function Layout({ children }) {
 
       <Header />
       <div className={classnames(styles.Layout)}>{children}</div>
-      <Footer />
 
       {!validCookie && (
         <CookieBanner

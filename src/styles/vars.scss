@@ -38,6 +38,7 @@ $shade-percent-3: 80;
 ====================================================================
 */
 
+$default-transition-long: 0.8s;
 $default-transition-medium: 0.5s;
 $default-transition: 0.33s;
 $default-transition-short: 0.2s;
@@ -49,10 +50,9 @@ $default-transition-short: 0.2s;
 ====================================================================
 */
 
-$white: #fff;
-$black: #262626;
-$grey: #595959;
-$brand-primary: #de6565;
+$white: #ebe9e1;
+$black: #000;
+$brand-primary: $black;
 
 /*
 ====================================================================
@@ -62,11 +62,10 @@ $brand-primary: #de6565;
 * Global variables used across the web app
 ====================================================================
 */
-$page-bg-color: $white;
+$page-bg-color: $black;
 $element-shadow: 0 16px 16px 10px rgba(0, 0, 0, 0.04);
 $element-shadow-center: 0 0 16px 0 rgba(0, 0, 0, 0.04);
-$element-shadow-center-blue: 0 0 16px 0 rgba(39, 113, 234, 0.1);
-$generic-fonts: Helvetica, Arial, sans-serif;
+$generic-fonts: 'Nord', Helvetica, Arial, sans-serif;
 $default-border-radius: 8px;
 
 /*
@@ -90,3 +89,11 @@ $elements: pages, elements, nav, banner, modal;
 ====================================================================
 */
 $default-page-max-width: px(1200);
+
+/*
+====================================================================
+* Paddings
+====================================================================
+*/
+$homepage-padding-mobile: px(16);
+$homepage-padding-tablet: px(24);
