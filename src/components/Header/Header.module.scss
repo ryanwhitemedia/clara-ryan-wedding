@@ -28,21 +28,6 @@
           cursor: initial;
         }
 
-        &.contactLink {
-          top: $homepage-padding-mobile;
-          left: $homepage-padding-mobile;
-        }
-
-        &.aboutLink {
-          top: $homepage-padding-mobile;
-          right: $homepage-padding-mobile;
-        }
-
-        &.creativeLink {
-          bottom: $homepage-padding-mobile;
-          right: $homepage-padding-mobile;
-        }
-
         .icon {
           opacity: 0;
           width: px(10);
@@ -57,6 +42,22 @@
     }
 
     .link {
+      &.contactLink {
+        top: $homepage-padding-mobile;
+        left: $homepage-padding-mobile;
+      }
+
+      &.aboutLink {
+        top: $homepage-padding-mobile;
+        right: $homepage-padding-mobile;
+      }
+
+      &.creativeLink {
+        bottom: $homepage-padding-mobile;
+        right: $homepage-padding-mobile;
+        transition: transform $default-transition-short;
+      }
+
       &.emailText {
         border-bottom: 1px solid $white;
         pointer-events: none;
@@ -66,6 +67,13 @@
         transition: opacity $default-transition-short, transform $default-transition-short;
         transform: translateX(-120%);
       }
+
+      &.comLink {
+        bottom: $homepage-padding-mobile;
+        right: $homepage-padding-mobile;
+        transform: translateX(150%);
+        transition: transform $default-transition-short;
+      }
     }
 
     .logoContainer {
@@ -73,9 +81,7 @@
       color: $white;
       bottom: $homepage-padding-mobile;
       left: $homepage-padding-mobile;
-      top: unset;
-      // es-lint-disable next-line
-      transition: all $default-transition-medium;
+      transition: width $default-transition-medium, transform $default-transition-medium;
       transform-origin: center;
 
       .logo {
@@ -86,11 +92,12 @@
 
   &.contact {
     .logoContainer {
-      width: calc(100vw - #{px(106)} - #{px(40)} - #{px(83)});
+      // Width is full screen, minus width of [accounts@ creative .com]
+      width: calc(100vw - #{px(106)} - #{px(40)} - #{px(83)} - #{px(41)});
       color: $white;
       bottom: $homepage-padding-mobile;
-      left: calc(#{$homepage-padding-mobile} + #{px(106)});
-      transition: all $default-transition-long;
+      transform: translateX(#{px(106)}) translateY(0);
+      transition: width $default-transition-long, transform $default-transition-long;
 
       .logo {
         width: 100%;
@@ -98,11 +105,21 @@
     }
 
     .link {
+      &.creativeLink {
+        transform: translateX(#{px(-41)});
+        transition: transform $default-transition-long;
+      }
+
       &.emailText {
         pointer-events: all;
         opacity: 1;
         transform: translateX(0);
         transition: opacity $default-transition-long, transform $default-transition-long;
+      }
+
+      &.comLink {
+        transform: translateX(0%);
+        transition: transform $default-transition-long;
       }
     }
   }
@@ -110,8 +127,7 @@
   &.about {
     .logoContainer {
       transition-duration: $default-transition-long;
-      bottom: 60%;
-      left: $homepage-padding-mobile;
+      transform: translateX(0) translateY(-58vh);
     }
   }
 
@@ -122,25 +138,6 @@
         .link {
           &:hover {
             font-style: italic;
-          }
-
-          &.contactLink {
-            top: $homepage-padding-tablet;
-            left: $homepage-padding-tablet;
-          }
-
-          &.aboutLink {
-            top: $homepage-padding-tablet;
-            right: $homepage-padding-tablet;
-          }
-
-          &.creativeLink {
-            bottom: $homepage-padding-tablet;
-            right: $homepage-padding-tablet;
-
-            &:hover {
-              font-style: normal;
-            }
           }
 
           .icon {
@@ -154,16 +151,42 @@
       }
     }
 
+    &.contactLink {
+      top: $homepage-padding-tablet;
+      left: $homepage-padding-tablet;
+    }
+
+    &.aboutLink {
+      top: $homepage-padding-tablet;
+      right: $homepage-padding-tablet;
+    }
+
+    &.creativeLink,
+    &.comLink {
+      bottom: $homepage-padding-tablet;
+      right: $homepage-padding-tablet;
+
+      &:hover {
+        font-style: normal;
+      }
+    }
+
     &.contact {
       .logoContainer {
-        width: calc(100vw - #{px(160)} - #{px(40)} - #{px(125)});
-        left: calc(#{$homepage-padding-mobile} + #{px(160)});
+        width: calc(100vw - #{px(160)} - #{px(40)} - #{px(125)} - #{px(80)});
+        transform: translateX(#{px(160)});
+      }
+
+      .link {
+        &.creativeLink {
+          transform: translateX(#{px(-60)});
+        }
       }
     }
 
     &.about {
       .logoContainer {
-        bottom: 55%;
+        transform: translateY(-55vh);
       }
     }
   }
@@ -171,7 +194,7 @@
   @include breakpoint(desktopSm) {
     &.about {
       .logoContainer {
-        bottom: 35%;
+        transform: translateY(-35vh);
       }
     }
   }

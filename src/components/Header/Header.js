@@ -47,6 +47,7 @@ function Header() {
           </li>
           <li>
             <p className={classnames(styles.link, styles.creativeLink)}>Creative</p>
+            <p className={classnames(styles.link, styles.comLink)}>.com</p>
           </li>
         </ul>
       </nav>
