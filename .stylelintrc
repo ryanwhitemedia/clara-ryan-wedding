@@ -11,7 +11,7 @@
     "plugin/no-low-performance-animation": [
       true,
       {
-        "ignore": ["background-color", "border-color", "color", "all"]
+        "ignore": ["background-color", "border-color", "color", "width"]
       }
     ],
     "at-rule-allowed-list": [
