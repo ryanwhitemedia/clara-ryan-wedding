@@ -20,6 +20,7 @@ html {
 }
 
 body {
+  background-color: $page-bg-color;
   color: $black;
   margin: 0;
   padding: 0;
@@ -111,6 +112,7 @@ input {
     border: 1px solid $black;
   }
 }
+
 textarea {
   border-radius: $default-border-radius;
   border: none;

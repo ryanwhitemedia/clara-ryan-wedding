@@ -8,12 +8,11 @@
 
   h3 {
     font-weight: bold;
-    margin: px(24) 0 px(12);
+    margin: px(32) 0 px(6);
   }
 
   @include breakpoint(tablet) {
     h3 {
-      margin: px(32) 0 px(12);
     }
   }
 

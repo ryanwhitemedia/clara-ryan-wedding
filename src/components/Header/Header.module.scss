@@ -41,9 +41,14 @@
 
       .menuItem {
         margin-bottom: px(48);
+        transition: transform $default-transition-short;
 
         .menuItemText {
           @include font-style(paragraph);
+
+          &.active {
+            font-weight: 600;
+          }
         }
       }
     }
@@ -58,7 +63,7 @@
     margin-left: auto;
     padding: px(4);
     position: fixed;
-    top: px(20);
+    top: px(70);
     right: px(25);
 
     .bar {
@@ -127,6 +132,22 @@
         &.four {
           transform: rotate(-45deg) scaleX(1);
           transition: transform $default-transition-short 0.45s;
+        }
+      }
+    }
+  }
+
+  @include breakpoint(tablet) {
+    .nav {
+      .menu {
+        .menuItem {
+          &:hover {
+            transform: scale(1.075);
+          }
+
+          .menuItemText {
+            @include font-size(24, 28);
+          }
         }
       }
     }
