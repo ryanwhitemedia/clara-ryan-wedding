@@ -1,0 +1,26 @@
+@import 'shared';
+
+.Faq {
+  h3,
+  p {
+    @include font-style(paragraph);
+  }
+
+  h3 {
+    font-weight: bold;
+    margin: px(24) 0 px(12);
+  }
+
+  @include breakpoint(tablet) {
+    h3 {
+      margin: px(32) 0 px(12);
+    }
+  }
+
+  @include breakpoint(tablet) {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    margin-top: px(120);
+  }
+}

@@ -2,6 +2,5 @@
 export const resizeDebounceTime = 10; // in ms
 
 // head
-export const siteName = 'Tonic';
-export const siteSlogan =
-  'Through design and development, we give life to meaningful brands that are sustainable, intentional, and useful.';
+export const siteName = 'Clara Ryan Wedding';
+export const siteSlogan = 'Save the date for the wedding of Clara and Ryan, September 29th 2023.';

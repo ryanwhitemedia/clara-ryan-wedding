@@ -1,0 +1,14 @@
+@import 'shared';
+
+.Contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding-bottom: px(20);
+  margin-top: auto;
+
+  .svg {
+    min-width: 95vw;
+  }
+}

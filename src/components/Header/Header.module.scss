@@ -2,199 +2,132 @@
 
 .Header {
   @include z-index(nav);
-  position: fixed;
-  top: 0;
+  padding: px(30) 0;
+  height: px(180);
+  overflow-x: hidden;
   width: 100vw;
-  display: flex;
-  align-items: center;
+  position: relative;
+
+  .logoWrapper {
+    @include z-index(navelements);
+
+    .logo {
+      width: px(100);
+      cursor: pointer;
+    }
+  }
 
   .nav {
+    @include z-index(nav);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: $white;
+    bottom: 0;
+    right: 0;
+    transform: translateX(100%);
+    transition: transform $default-transition;
+    display: flex;
+    justify-content: center;
+
     .menu {
       display: flex;
-      flex-direction: row;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
 
-      .link {
-        @include font-style(landing-hero);
-        background: none;
-        padding: 0;
-        border: none;
-        color: $white;
-        position: fixed;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
+      .menuItem {
+        margin-bottom: px(48);
 
-        &:disabled {
-          cursor: initial;
-        }
-
-        .icon {
-          opacity: 0;
-          width: px(10);
-          margin: px(0) px(10);
-          transition: opacity $default-transition-short;
-
-          &.active {
-            opacity: 1;
-          }
+        .menuItemText {
+          @include font-style(paragraph);
         }
       }
     }
+  }
 
-    .link {
-      &.contactLink {
-        top: $homepage-padding-mobile;
-        left: $homepage-padding-mobile;
+  .hamburgerButton {
+    @include z-index(navelements);
+    @include box(px(40));
+    background-color: transparent;
+    border: none;
+    display: block;
+    margin-left: auto;
+    padding: px(4);
+    position: fixed;
+    top: px(20);
+    right: px(25);
+
+    .bar {
+      background-color: $black;
+      height: px(2);
+      margin: auto 0;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: px(2);
+
+      // Hamburger Icon
+      &.one {
+        transform-origin: left;
+        transform: translateY(px(-4)) scaleX(1);
+        width: px(35);
+        transition: transform $default-transition-short 0.45s;
       }
 
-      &.aboutLink {
-        top: $homepage-padding-mobile;
-        right: $homepage-padding-mobile;
+      &.two {
+        transform-origin: right;
+        transform: translateY(px(4)) scaleX(1);
+        width: px(35);
+        transition: transform $default-transition-short 0.45s;
       }
 
-      &.creativeLink {
-        bottom: $homepage-padding-mobile;
-        right: $homepage-padding-mobile;
+      // Close X Icon
+      &.three {
+        transform: rotate(45deg) scaleX(0);
         transition: transform $default-transition-short;
+        width: px(35);
       }
 
-      &.emailText {
-        border-bottom: 1px solid $white;
-        pointer-events: none;
-        left: $homepage-padding-mobile;
-        bottom: $homepage-padding-mobile;
-        position: fixed;
-        transition: opacity $default-transition-short, transform $default-transition-short;
-        transform: translateX(-120%);
-      }
-
-      &.comLink {
-        bottom: $homepage-padding-mobile;
-        right: $homepage-padding-mobile;
-        transform: translateX(150%);
-        transition: transform $default-transition-short;
-      }
-    }
-
-    .logoContainer {
-      width: calc(100vw - #{px(40)} - #{px(83)});
-      color: $white;
-      bottom: $homepage-padding-mobile;
-      left: $homepage-padding-mobile;
-      transition: width $default-transition-medium, transform $default-transition-medium;
-      transform-origin: center;
-
-      .logo {
-        width: 100%;
+      &.four {
+        transform: rotate(-45deg) scaleX(0);
+        transition: transform $default-transition-short 0.15s;
+        width: px(35);
       }
     }
   }
 
-  &.contact {
-    .logoContainer {
-      // Width is full screen, minus width of [accounts@ creative .com]
-      width: calc(100vw - #{px(106)} - #{px(40)} - #{px(83)} - #{px(41)});
-      color: $white;
-      bottom: $homepage-padding-mobile;
-      transform: translateX(#{px(106)}) translateY(0);
-      transition: width $default-transition-long, transform $default-transition-long;
-
-      .logo {
-        width: 100%;
-      }
-    }
-
-    .link {
-      &.creativeLink {
-        transform: translateX(#{px(-41)});
-        transition: transform $default-transition-long;
-      }
-
-      &.emailText {
-        pointer-events: all;
-        opacity: 1;
-        transform: translateX(0);
-        transition: opacity $default-transition-long, transform $default-transition-long;
-      }
-
-      &.comLink {
-        transform: translateX(0%);
-        transition: transform $default-transition-long;
-      }
-    }
-  }
-
-  &.about {
-    .logoContainer {
-      transition-duration: $default-transition-long;
-      transform: translateX(0) translateY(-58vh);
-    }
-  }
-
-  /* Desktop */
-  @include breakpoint(tablet) {
+  &.navOpen {
     .nav {
-      .menu {
-        .link {
-          &:hover {
-            font-style: italic;
-          }
+      transform: translateX(0);
+    }
 
-          .icon {
-            width: px(15);
-          }
+    .hamburgerButton {
+      .bar {
+        // Hamburger Icon
+        &.one {
+          transform: translateY(px(-4)) scaleX(0);
+          transition: transform $default-transition-short;
         }
-      }
 
-      .logoContainer {
-        width: calc(100vw - #{px(40)} - #{px(125)});
-      }
-    }
-
-    &.contactLink {
-      top: $homepage-padding-tablet;
-      left: $homepage-padding-tablet;
-    }
-
-    &.aboutLink {
-      top: $homepage-padding-tablet;
-      right: $homepage-padding-tablet;
-    }
-
-    &.creativeLink,
-    &.comLink {
-      bottom: $homepage-padding-tablet;
-      right: $homepage-padding-tablet;
-
-      &:hover {
-        font-style: normal;
-      }
-    }
-
-    &.contact {
-      .logoContainer {
-        width: calc(100vw - #{px(160)} - #{px(40)} - #{px(125)} - #{px(80)});
-        transform: translateX(#{px(160)});
-      }
-
-      .link {
-        &.creativeLink {
-          transform: translateX(#{px(-60)});
+        &.two {
+          transform: translateY(px(4)) scaleX(0);
+          transition: transform $default-transition-short;
         }
-      }
-    }
 
-    &.about {
-      .logoContainer {
-        transform: translateY(-55vh);
-      }
-    }
-  }
+        // Close X Icon
+        &.three {
+          transform: rotate(45deg) scaleX(1);
+          transition: transform $default-transition-short $default-transition-short;
+        }
 
-  @include breakpoint(desktopSm) {
-    &.about {
-      .logoContainer {
-        transform: translateY(-35vh);
+        &.four {
+          transform: rotate(-45deg) scaleX(1);
+          transition: transform $default-transition-short 0.45s;
+        }
       }
     }
   }

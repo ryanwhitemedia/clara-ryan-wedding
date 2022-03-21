@@ -50,7 +50,7 @@ $default-transition-short: 0.2s;
 ====================================================================
 */
 
-$white: #ebe9e1;
+$white: #fbf8f2;
 $black: #000;
 $brand-primary: $black;
 
@@ -62,7 +62,7 @@ $brand-primary: $black;
 * Global variables used across the web app
 ====================================================================
 */
-$page-bg-color: $black;
+$page-bg-color: $white;
 $element-shadow: 0 16px 16px 10px rgba(0, 0, 0, 0.04);
 $element-shadow-center: 0 0 16px 0 rgba(0, 0, 0, 0.04);
 $generic-fonts: 'Nord', Helvetica, Arial, sans-serif;
@@ -81,14 +81,14 @@ $navbar-height-desktop: 9.6rem;
 * List of z-index element
 ====================================================================
 */
-$elements: pages, elements, nav, banner, modal;
+$elements: pages, elements, nav, navelements, banner, modal;
 
 /*
 ====================================================================
 * Max Widths to use for pages
 ====================================================================
 */
-$default-page-max-width: px(1200);
+$default-page-max-width: px(900);
 
 /*
 ====================================================================
