@@ -1,0 +1,56 @@
+@import 'shared';
+
+.Engagement {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 0;
+  height: 100%;
+  flex-grow: 1;
+  padding: 0 0 px(20);
+
+  h1 {
+    @include font-style(paragraph);
+  }
+
+  .textContainer {
+    margin-top: px(36);
+    max-width: px(500);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  h3 {
+    @include font-style(paragraph);
+    margin-bottom: px(8);
+  }
+  p {
+    @include font-style(paragraph);
+  }
+
+  .largeDetail {
+    @include font-style(heading-s);
+  }
+
+  .boldText {
+    @include font-style(heading-s);
+    font-weight: 600;
+    margin-bottom: px(8);
+  }
+
+  .button {
+    display: block;
+    border: 1px solid $black;
+    padding: px(12) px(48);
+    margin-top: px(24);
+    transition: background-color $default-transition-short, color $default-transition-short;
+    background-color: $black;
+    color: $white;
+
+    &:hover {
+      background-color: transparent;
+      color: $black;
+    }
+  }
+}

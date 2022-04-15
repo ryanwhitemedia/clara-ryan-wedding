@@ -16,8 +16,11 @@ function Faq() {
       <h3>Q: Are kids welcome?</h3>
       <p>
         Our wedding is going to be an adults-only event so that everyone can relax and enjoy the evening. We appreciate
-        you making arrangements ahead of time and leaving the kids at home so you can celebrate with us. Have more
-        questions? Contact us at <a href="mailto:info@clararyanwedding.com">info@clararyanwedding.com</a>.
+        you making arrangements ahead of time and leaving the kids at home so you can celebrate with us.
+      </p>
+
+      <p className={classnames(styles.note)}>
+        Have more questions? Contact us at <a href="mailto:info@clararyanwedding.com">info@clararyanwedding.com</a>.
       </p>
     </main>
   );

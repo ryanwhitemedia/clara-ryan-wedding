@@ -11,6 +11,10 @@
     margin: px(32) 0 px(6);
   }
 
+  .note {
+    margin-top: px(48);
+  }
+
   @include breakpoint(tablet) {
     h3 {
     }
