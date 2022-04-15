@@ -8,7 +8,10 @@ import Head from '@/components/Head/Head';
 function Engagement() {
   return (
     <main className={classnames(styles.Engagement)}>
-      <Head title="Engagement Party" />
+      <Head
+        title="Engagement Party"
+        description="Saturday, May 28, 2022. Terroni Adelaide. 57 Adelaide St E, Toronto, ON."
+      />
       <h1>Engagement Party</h1>
 
       <div className={classnames(styles.textContainer)}>
