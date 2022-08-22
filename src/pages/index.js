@@ -23,7 +23,13 @@ function Home({ className }) {
       </h1>
       <Date className={classnames(styles.date)} />
       <p>Friday, September 29, 2023</p>
-      <p>Location: TBA</p>
+      <p>
+        Hosted @{' '}
+        <a href="https://eloramill.ca/" target="_blank" rel="noreferrer">
+          Elora Mill
+        </a>
+      </p>
+      <p> 77 Mill St W, Elora, ON N0B 1S0</p>
       <a
         className={classnames(styles.button)}
         href="https://forms.gle/DvtoLvDFqYWBNegh8"

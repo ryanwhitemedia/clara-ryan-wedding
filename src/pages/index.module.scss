@@ -16,14 +16,19 @@
     @include font-style(paragraph);
   }
 
+  p a {
+    text-decoration: underline;
+  }
+
   h6 {
     @include font-style(small-text);
   }
 
   .button {
     border: 1px solid $black;
+    margin-bottom: px(8);
     padding: px(12) px(24);
-    margin-top: px(24);
+    margin-top: px(80);
     transition: background-color $default-transition-short, color $default-transition-short;
 
     &:hover {
@@ -32,12 +37,8 @@
     }
   }
 
-  .inviteLink {
-    margin-top: auto;
-  }
-
   .date {
     width: calc(100vw + #{px(15)});
-    margin: px(50) 0;
+    margin: px(80) 0;
   }
 }

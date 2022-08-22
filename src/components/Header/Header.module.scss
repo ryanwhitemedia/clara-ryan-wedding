@@ -10,6 +10,7 @@
 
   .logoWrapper {
     @include z-index(navelements);
+    display: inline-flex;
 
     .logo {
       width: px(100);

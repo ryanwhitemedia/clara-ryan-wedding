@@ -1,0 +1,21 @@
+@import 'shared';
+
+.Location {
+  .imageContainer {
+    margin-bottom: px(48);
+  }
+
+  .list {
+    text-align: left;
+
+    .listItem {
+      margin-bottom: px(24);
+    }
+  }
+
+  @include breakpoint(desktopSm) {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    align-items: center;
+  }
+}
