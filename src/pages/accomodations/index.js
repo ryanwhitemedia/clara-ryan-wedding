@@ -5,7 +5,7 @@ import styles from './index.module.scss';
 
 import Head from '@/components/Head/Head';
 
-function accomodations() {
+function Accomodations() {
   return (
     <main className={classnames(styles.Accomodations)}>
       <Head title="accomodations" />
@@ -120,7 +120,8 @@ function accomodations() {
             target="_blank"
             rel="noreferrer"
           >
-            Best Western (Block Code: TBD)
+            Best Western <br />
+            (Mention Clara+Ryan Wedding for preferred rates)
           </a>
         </li>
       </ul>
@@ -138,4 +139,4 @@ function accomodations() {
   );
 }
 
-export default memo(accomodations);
+export default memo(Accomodations);
