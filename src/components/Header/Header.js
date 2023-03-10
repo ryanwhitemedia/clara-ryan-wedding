@@ -11,7 +11,6 @@ function Header() {
   const [showNav, setShowNav] = useState(false);
   const router = useRouter();
 
-  console.log(router);
   return (
     <header className={classnames(styles.Header, { [styles.navOpen]: showNav })}>
       <Link href="/" passHref>
@@ -54,6 +53,17 @@ function Header() {
                 Location Details
               </a>
             </Link>
+          </li>
+          <li className={classnames(styles.menuItem)}>
+            <a
+              target="_blank"
+              onClick={() => setShowNav(false)}
+              href="https://withjoy.com/clararyan/registry"
+              className={classnames(styles.menuItemText)}
+              rel="noreferrer"
+            >
+              Registry
+            </a>
           </li>
           <li className={classnames(styles.menuItem)}>
             <Link href="/faq">

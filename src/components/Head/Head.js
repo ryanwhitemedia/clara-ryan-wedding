@@ -23,12 +23,12 @@ function Head({ title, description, keywords, og_title, og_description, og_image
       <meta name="keywords" content={keywords.join()} />
       <meta name="theme-color" content="#ffffff" />
       <meta name="msapplication-TileColor" content="#ffffff" />
-      <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
-      <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
-      <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
+      <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png?v=1" />
+      <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png?v=1" />
+      <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png?v=1" />
       <link rel="manifest" href="/favicons/site.webmanifest" />
-      <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#000000" />
-      <link rel="shortcut icon" href="/favicons/favicon.ico" />
+      <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg?v=1" color="#000000" />
+      <link rel="shortcut icon" href="/favicons/favicon.ico?v=1" />
       <meta name="msapplication-config" content="/favicons/browserconfig.xml" />
       {/* Share meta tags */}
       <meta property="og:locale" content="en_US" />

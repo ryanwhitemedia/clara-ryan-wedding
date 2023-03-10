@@ -53,9 +53,6 @@ function Faq() {
       <h3>Q: wheelchair accessibility</h3>
       <p>Yes, there are ramps and elevators. please reach out to us if you&apos;ll need more assistance.</p>
 
-      <h3>Q: Plus ones</h3>
-      <p>Your formal invitation will include plus one details.</p>
-
       <p className={classnames(styles.note)}>
         Have more questions? Contact us at <a href="mailto:info@clararyanwedding.com">info@clararyanwedding.com</a>.
       </p>
