@@ -23,6 +23,19 @@ function Faq() {
         </a>
       </p>
 
+      <h3>Q: How can I RSVP?</h3>
+      <p>
+        Visit{' '}
+        <a
+          href="https://www.weddingwire.ca/web/clara-marshall-and-ryan-white"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          this link
+        </a>{' '}
+        to RSVP.
+      </p>
+
       <h3>Q: Can I bring a date?</h3>
       <p>Your formal invitation will include plus one details.</p>
 

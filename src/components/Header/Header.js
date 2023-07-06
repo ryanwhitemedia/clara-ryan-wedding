@@ -33,6 +33,17 @@ function Header() {
             </Link>
           </li>
           <li className={classnames(styles.menuItem)}>
+            <a
+              target="_blank"
+              onClick={() => setShowNav(false)}
+              href="https://www.weddingwire.ca/web/clara-marshall-and-ryan-white"
+              className={classnames(styles.menuItemText)}
+              rel="noreferrer"
+            >
+              RSVP
+            </a>
+          </li>
+          <li className={classnames(styles.menuItem)}>
             <Link href="/accomodations">
               {/*  eslint-disable-next-line  */}
               <a

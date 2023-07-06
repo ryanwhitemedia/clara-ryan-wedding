@@ -23,6 +23,7 @@ function Home({ className }) {
       </h1>
       <Date className={classnames(styles.date)} />
       <p>Friday, September 29, 2023</p>
+      <p>4:00pm EST</p>
       <p>
         Hosted @{' '}
         <a href="https://eloramill.ca/" target="_blank" rel="noreferrer">
@@ -32,14 +33,14 @@ function Home({ className }) {
       <p> 77 Mill St W, Elora, ON N0B 1S0</p>
       <a
         className={classnames(styles.button)}
-        href="https://forms.gle/DvtoLvDFqYWBNegh8"
+        href="https://www.weddingwire.ca/web/clara-marshall-and-ryan-white"
         target="_blank"
         rel="noreferrer"
       >
-        Provide Contact Details
+        RSVP
       </a>
 
-      <h6 className={classnames(styles.inviteLink)}>Formal invitation to follow</h6>
+      <h6 className={classnames(styles.inviteLink)}>Formal invitations are in the mail</h6>
     </main>
   );
 }
