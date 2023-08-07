@@ -52,7 +52,11 @@ function Faq() {
       </p>
 
       <h3>Q: dress code</h3>
-      <p>Formal</p>
+      <p>
+        Cocktail: A step above semi-formal, cocktail attire is a balance between elegant, comfortable, fancy and
+        pared-back. Women can opt for a floor-length, tea-length, knee-length, or midi look. Men are required to wear a
+        suit and tie but not a tuxedo.
+      </p>
 
       <h3>Q: Weather</h3>
       <p>The wedding will be held indoors.</p>
