@@ -41,4 +41,12 @@
     width: calc(100vw + #{px(15)});
     margin: px(80) 0;
   }
+
+  .schedule {
+    display: flex;
+    flex-direction: column;
+    column-gap: px(24);
+    row-gap: px(24);
+    margin-top: px(80);
+  }
 }

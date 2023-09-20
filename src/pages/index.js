@@ -23,7 +23,7 @@ function Home({ className }) {
       </h1>
       <Date className={classnames(styles.date)} />
       <p>Friday, September 29, 2023</p>
-      <p>4:00pm EST</p>
+      <p>4:00pm</p>
       <p>
         Hosted @{' '}
         <a href="https://eloramill.ca/" target="_blank" rel="noreferrer">
@@ -31,20 +31,31 @@ function Home({ className }) {
         </a>
       </p>
       <p> 77 Mill St W, Elora, ON N0B 1S0</p>
-      <a
-        className={classnames(styles.button)}
-        href="https://www.weddingwire.ca/web/clara-marshall-and-ryan-white"
-        target="_blank"
-        rel="noreferrer"
-      >
-        RSVP
-      </a>
-
-      <h6 className={classnames(styles.inviteLink)}>Formal invitations are in the mail</h6>
+      <div id="schedule" className={styles.schedule}>
+        <h2>Schedule</h2>
+        <div>
+          <h3>Ceremony</h3>
+          <p>4:30PM - 5:00pm</p>
+          <p>The Foundry Chapel </p>
+        </div>
+        <div>
+          <h3>Cocktails </h3>
+          <p>5:00PM - 6:30PM </p>
+          <p>Granary - Irvine Room </p>
+        </div>
+        <div>
+          <h3>Dinner reception </h3>
+          <p>6:30PM - 10:00PM </p>
+          <p>Granary - Grand Room </p>
+        </div>
+        <div>
+          <h3>Dancing </h3>
+          <p>10:00Pm - 1:30AM </p>
+          <p>Granary - Grand Room</p>
+        </div>
+      </div>
     </main>
   );
 }
-
-Home.defaultProps = {};
 
 export default memo(Home);
