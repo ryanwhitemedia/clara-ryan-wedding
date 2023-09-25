@@ -41,17 +41,6 @@ function Header() {
             </Link>
           </li>
           <li className={classnames(styles.menuItem)}>
-            <Link href="/accomodations">
-              {/*  eslint-disable-next-line  */}
-              <a
-                onClick={() => setShowNav(false)}
-                className={classnames(styles.menuItemText, { [styles.active]: router.pathname === '/accomodations' })}
-              >
-                Accomodations
-              </a>
-            </Link>
-          </li>
-          <li className={classnames(styles.menuItem)}>
             <Link href="/location">
               {/*  eslint-disable-next-line  */}
               <a

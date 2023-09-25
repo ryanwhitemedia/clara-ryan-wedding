@@ -34,6 +34,11 @@ function Home({ className }) {
       <div id="schedule" className={styles.schedule}>
         <h2>Schedule</h2>
         <div>
+          <h3>Shuttle Pickup</h3>
+          <p>3:45pm</p>
+          <p>Best Western, St. Andrews, Breadalbane Inn</p>
+        </div>
+        <div>
           <h3>Ceremony</h3>
           <p>4:30PM - 5:00pm</p>
           <p>The Foundry Chapel </p>
@@ -50,8 +55,15 @@ function Home({ className }) {
         </div>
         <div>
           <h3>Dancing </h3>
-          <p>10:00Pm - 1:30AM </p>
+          <p>10:00Pm - 1:30AM</p>
           <p>Granary - Grand Room</p>
+        </div>
+        <div>
+          <h3>Shuttle Drop-Off</h3>
+          <p>10:30Pm - 1:30AM </p>
+          <p style={{ maxWidth: '450px' }}>
+            A car will be on standby outside of the venue to bring guests back to their hotels.
+          </p>
         </div>
       </div>
     </main>

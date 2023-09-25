@@ -1,5 +1,4 @@
 import { memo } from 'react';
-import Link from 'next/link';
 import classnames from 'classnames';
 
 import styles from './index.module.scss';
@@ -10,45 +9,12 @@ function Faq() {
   return (
     <main className={classnames(styles.Faq)}>
       <Head title="FAQ" />
-      <h3>Q: RSVP deadline</h3>
+      <h3>Q: Will there be a shuttle?</h3>
       <p>
-        This will be included in a formal invitation. If you have not already done so, please provide your contact
-        details where a formal invitation can be sent{' '}
-        <a
-          href="https://docs.google.com/forms/d/e/1FAIpQLSfjBdXFwviAHZr2mnVNvBk5Xe1mtW7X-PF9Dm0YimUC_9vKFA/viewform"
-          target="_blank"
-          rel="noreferrer"
-        >
-          here.
-        </a>
-      </p>
-
-      <h3>Q: How can I RSVP?</h3>
-      <p>
-        Visit{' '}
-        <a
-          href="https://www.weddingwire.ca/web/clara-marshall-and-ryan-white"
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          this link
-        </a>{' '}
-        to RSVP.
-      </p>
-
-      <h3>Q: Can I bring a date?</h3>
-      <p>Your formal invitation will include plus one details.</p>
-
-      <h3>Q: Where can i stay</h3>
-      <p>
-        Please visit our <Link href="/accomodations/">Accomodations</Link> page for hotels, airbnbs, and other
-        recomendations.
-      </p>
-
-      <h3>Q: Are kids welcome?</h3>
-      <p>
-        Our wedding is going to be an adults-only event so that everyone can relax and enjoy the evening. We appreciate
-        you making arrangements ahead of time and leaving the kids at home so you can celebrate with us.
+        Yes. A shuttle will be arriving at the Best Western, then St. Andrews Suites, then Breadalbane Inn at 3:45pm.
+        <br />
+        <br />
+        Beginning at 10:30pm a car will be on stand by to bring guests back to their accomodations.
       </p>
 
       <h3>Q: dress code</h3>
@@ -56,6 +22,12 @@ function Faq() {
         Cocktail: A step above semi-formal, cocktail attire is a balance between elegant, comfortable, fancy and
         pared-back. Women can opt for a floor-length, tea-length, knee-length, or midi look. Men are required to wear a
         suit and tie but not a tuxedo.
+      </p>
+
+      <h3>Q: Are kids welcome?</h3>
+      <p>
+        Our wedding is going to be an adults-only event so that everyone can relax and enjoy the evening. We appreciate
+        you making arrangements ahead of time and leaving the kids at home so you can celebrate with us.
       </p>
 
       <h3>Q: Weather</h3>
