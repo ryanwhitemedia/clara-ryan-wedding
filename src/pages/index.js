@@ -1,4 +1,4 @@
-import { memo, useContext } from 'react';
+import { memo, useContext, useEffect } from 'react';
 import classnames from 'classnames';
 
 import styles from './index.module.scss';
@@ -10,8 +10,23 @@ import { AppContext } from '@/contexts/app-context';
 
 import Head from '../components/Head/Head';
 
-function Home({ className }) {
+function Home({ className, token }) {
   const { homeState } = useContext(AppContext);
+
+  useEffect(() => {
+    function handleIframeReady(event) {
+      if (event.data === 'READY') {
+        const targetWindow = window.frames['targetFrame'];
+        targetWindow.postMessage({ token }, '*');
+      }
+    }
+
+    window.addEventListener('message', handleIframeReady);
+
+    return () => {
+      window.removeEventListener('message', handleIframeReady);
+    };
+  }, [token]);
 
   return (
     <main className={classnames(styles.Home, className, styles[homeState])}>
@@ -66,8 +81,36 @@ function Home({ className }) {
           </p>
         </div>
       </div>
+      <div style={{ width: '100vw', height: '100vh' }}>
+        <iframe
+          title="FinChat"
+          name="targetFrame"
+          src={`https://widget.finchat.io/0ef2466ec1864f0b97848d141ccca319`}
+          width="100%"
+          height="100%"
+          style={{ border: 'none' }}
+        />
+      </div>
     </main>
   );
 }
+
+export const getStaticProps = async () => {
+  const widgetKey = '0ef2466ec1864f0b97848d141ccca319';
+
+  if (typeof widgetKey !== 'string') return { notFound: true };
+
+  const res = await fetch(`https://api.widget.finchat.io/auth/token`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ widgetKey, payload: { uid: 'demo-uid', dailyLimit: 5, screener: false } })
+  });
+
+  if (!res.ok) return { notFound: true, revalidate: 5 };
+
+  const token = await res.text();
+
+  return { props: { token, widgetKey }, revalidate: 5 };
+};
 
 export default memo(Home);
