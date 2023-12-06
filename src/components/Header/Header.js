@@ -33,6 +33,17 @@ function Header() {
             </Link>
           </li>
           <li className={classnames(styles.menuItem)}>
+            <a
+              className={classnames(styles.menuItemText)}
+              onClick={() => setShowNav(false)}
+              href="https://innayasinskaphotography.pixieset.com/theweddingofclaraandryan/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Photos
+            </a>
+          </li>
+          <li className={classnames(styles.menuItem)}>
             <Link href="/#schedule">
               {/* eslint-disable-next-line  */}
               <a className={classnames(styles.menuItemText)} onClick={() => setShowNav(false)}>

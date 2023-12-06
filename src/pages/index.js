@@ -31,6 +31,16 @@ function Home({ className }) {
         </a>
       </p>
       <p> 77 Mill St W, Elora, ON N0B 1S0</p>
+      <div className={styles.photoButton}>
+        <a
+          className={classnames(styles.button)}
+          href="https://innayasinskaphotography.pixieset.com/theweddingofclaraandryan/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          View The Photos
+        </a>
+      </div>
       <div id="schedule" className={styles.schedule}>
         <h2>Schedule</h2>
         <div>
